@@ -21,3 +21,17 @@ A [Pocketmine-MP](https://pmmp.io) plugin that will give you a chance to chop do
   Got a suggestion? Dm me!
     * ace87.
     * ace873056.
+
+# Report a bug
+
+Need to report a bug?
+
+Please provide any error logs from the crash dump or console or type a clear way to reproduce it.
+
+[Click me!](https://github.com/Terpz710/LumberJack/issues/new)
+
+# Want to contribute?
+
+Note: I will not be merging any request! If the change is too small then it wont be accepted, dm me the issue instead.
+
+[click me!](https://github.com/Terpz710/LumberJack/pulls)
