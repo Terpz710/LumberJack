@@ -1,16 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Terpz710\LumberJack;
 
 use pocketmine\plugin\PluginBase;
+
 use pocketmine\event\Listener;
 use pocketmine\event\block\BlockBreakEvent;
+
 use pocketmine\block\Block;
-use pocketmine\block\VanillaBlocks;
 use pocketmine\block\BlockTypeIds;
+use pocketmine\block\VanillaBlocks;
+
 use pocketmine\item\ItemTypeIds;
 
-class Loader extends PluginBase implements Listener {
+final class Loader extends PluginBase implements Listener {
 
     private $logBlocks = [
         BlockTypeIds::OAK_LOG,
@@ -21,11 +26,12 @@ class Loader extends PluginBase implements Listener {
         BlockTypeIds::DARK_OAK_LOG,
     ];
 
-    public function onEnable(): void {
+    protected function onEnable() : void{
+        $this->saveDefaultConfig();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
-    public function onBlockBreak(BlockBreakEvent $event) {
+    public function onBlockBreak(BlockBreakEvent $event) : void{
         $block = $event->getBlock();
         $player = $event->getPlayer();
         $tool = $event->getItem();
@@ -38,7 +44,7 @@ class Loader extends PluginBase implements Listener {
             $tool->getTypeId() === ItemTypeIds::NETHERITE_AXE) {
 
             if (in_array($block->getTypeId(), $this->logBlocks)) {
-                $chance = 10;
+                $chance = $this->getConfig()->get("chance") ?? 10;
 
                 if (mt_rand(1, 100) <= $chance) {
                     $drops = $block->getDrops($tool);
@@ -61,7 +67,7 @@ class Loader extends PluginBase implements Listener {
         }
     }
 
-    private function getAdjacentLogs(Block $block, int $dxRange, int $dyRange, int $dzRange): array {
+    private function getAdjacentLogs(Block $block, int $dxRange, int $dyRange, int $dzRange) : array{
         $adjacentLogs = [];
         $world = $block->getPosition()->getWorld();
         $x = $block->getPosition()->getX();
