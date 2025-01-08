@@ -16,7 +16,7 @@ A [Pocketmine-MP](https://pmmp.io) plugin that will give you a chance to chop do
 
 * Currently only obtainable wood are supported. (Oak, Birch, Spruce, Acacia, Jungle and Dark Oak)
 * All axe types are supported
-* Theres a chance of 10% for the event to occur
+* Configure the chances via 'config.yml'
 
   Got a suggestion? Dm me!
     * ace87.
