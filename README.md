@@ -18,9 +18,8 @@ A [Pocketmine-MP](https://pmmp.io) plugin that will give you a chance to chop do
 * All axe types are supported
 * Configure the chances via 'config.yml'
 
-  Got a suggestion? Dm me!
-    * ace87.
-    * ace873056.
+  Got a suggestion? Dm me via Discord!
+    * ace873056
 
 # Report a bug
 
